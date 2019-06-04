@@ -51,3 +51,17 @@
             (append (base8 (floor N 8)) (list (mod N 8)) ))))
 (loop for x in '(-1 0 7 8 15 20 204)
       do (print (base8 x))) ;Test Cases
+
+;Exercise #5
+(defun myMember(x lst)
+	(if (null lst)
+		nil
+		(if (eq x (car lst))
+			t
+			(myMember x (rest lst)))))
+;Test Cases
+(print (myMember 'a '( ) ))
+(print (myMember 'b '(a b)))
+(print (myMember 'a '(a b c d)))
+(print (myMember 1 '(1 2 3 4)))
+		
