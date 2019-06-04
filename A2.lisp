@@ -21,3 +21,9 @@
 	;d)	(cadar '(((D) E) U))
 	
 ;Exercise #2
+(defun elementIsNumber(L)
+	(if (numberp (cadr L))
+		(print 'T)
+		(print Nil)))
+		
+;Exercise #3
