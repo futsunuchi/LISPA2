@@ -64,4 +64,16 @@
 (print (myMember 'b '(a b)))
 (print (myMember 'a '(a b c d)))
 (print (myMember 1 '(1 2 3 4)))
-		
+
+;Exercise #6
+(defun nbDigits(N)
+	(if (< N 10)
+		1
+		(+ 1 (nbDigits (floor N 10)))))
+;Test Cases
+(print(nbDigits -12))
+(print(nbDigits 0))
+(print(nbDigits 6))
+(print(nbDigits 9))
+(print(nbDigits 10))
+(print(nbDigits 1256))
