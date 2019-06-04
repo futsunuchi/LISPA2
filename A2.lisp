@@ -27,3 +27,7 @@
 		(print Nil)))
 		
 ;Exercise #3
+(defun elementIsList(L)
+	(if (consp (cadr L))
+		(print t)
+		(print nil)))
