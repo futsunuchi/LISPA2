@@ -49,8 +49,9 @@
          (if (and (>= 0) (< N 8))
             (list N)
             (append (base8 (floor N 8)) (list (mod N 8)) ))))
+;Test Cases
 (loop for x in '(-1 0 7 8 15 20 204)
-      do (print (base8 x))) ;Test Cases
+      do (print (base8 x))) 
 
 ;Exercise #5
 (defun myMember(x lst)
@@ -89,4 +90,14 @@
 (print(binary_length_ 4))
 (print(binary_length_ 9))
 (print(binary_length_ 10))
-		  
+
+;Exercise #8
+(defun binary_List(N)
+	(if (<= N 0)
+         (list nil)
+         (if (and (> 0) (< N 2))
+            (list N)
+            (append (binary_List (floor N 2)) (list (mod N 2)) ))))
+;Test Case
+(loop for x in '(0 -1  1 4 5 10 15 1023 1024)
+      do (print (binary_List x))) 
