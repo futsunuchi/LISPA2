@@ -25,9 +25,29 @@
 	(if (numberp (cadr L))
 		(print 'T)
 		(print Nil)))
-		
+;Test Cases
+(elementIsNumber ‘(1 2 3 4))
+(elementIsNumber ‘(1 a b 4))
 ;Exercise #3
 (defun elementIsList(L)
 	(if (consp (cadr L))
 		(print t)
 		(print nil)))
+;Test Cases
+(elementIsList '((1 2) 3 4))
+(elementIsList '(1 a b 4))
+(elementIsList '( (1 (2)) 3 4) )
+(elementIsList '(1 (a) b 4))
+(elementIsList '( (1 (2)) (3 4)) )
+(elementIsList '( (1 (2)) ((3) 4)) )
+(elementIsList '( (1 (2)) ((3) (4)) ) )
+
+;Exercise #4
+(defun base8(N)
+	(if (< N 0)
+         (list -1)
+         (if (and (>= 0) (< N 8))
+            (list N)
+            (append (base8 (floor N 8)) (list (mod N 8)) ))))
+(loop for x in '(-1 0 7 8 15 20 204)
+      do (print (base8 x))) ;Test Cases
