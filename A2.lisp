@@ -77,3 +77,16 @@
 (print(nbDigits 9))
 (print(nbDigits 10))
 (print(nbDigits 1256))
+
+;Exercise #7
+(defun binary_length_(N)
+	(cond ((zerop N) 1)
+		  ((= N 1) 1)
+		  (t (+ 1 (binary_length_ (floor (/ N 2)))))))
+;Test Cases
+(print(binary_length_ 0))
+(print(binary_length_ 1))
+(print(binary_length_ 4))
+(print(binary_length_ 9))
+(print(binary_length_ 10))
+		  
