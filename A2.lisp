@@ -46,7 +46,7 @@
 (defun base8(N)
 	(if (< N 0)
          (list -1)
-         (if (and (>= 0) (< N 8))
+         (if (and (>= N 0) (< N 8))
             (list N)
             (append (base8 (floor N 8)) (list (mod N 8)) ))))
 ;Test Cases
@@ -101,3 +101,5 @@
 ;Test Case
 (loop for x in '(0 -1  1 4 5 10 15 1023 1024)
       do (print (binary_List x))) 
+	  
+;Exercise #9
