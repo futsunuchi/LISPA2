@@ -1,7 +1,7 @@
-; STUDENT							ID	
+﻿; STUDENT				ID	
 ; Juan Sebastian Hoyos			40087920
-; Noah Freger
-; Abdalla Osman
+; Noah Freger				40097005
+; Abdalla Osman				40007620
 ; Kevin Rao 
 
 ;Assignment 2:
@@ -103,3 +103,35 @@
       do (print (binary_List x))) 
 	  
 ;Exercise #9
+(defun nth2 (n lst)
+  (if(or(zerop n)(null lst))
+     nil
+   (if (= n 1)
+    (car lst)
+    (nth2 (- n 1) (cdr lst)))))
+
+;Test Cases
+(print(nth2 1 '()))
+(print(nth2 0 '(12 4 65 3)))
+(print(nth2 1 '(12 4 65 3)))
+(print(nth2 2 '(12 4 65 3)))
+(print(nth2 3 '(12 4 65 3)))
+(print(nth2 4 '(12 4 65 3)))
+
+;Exercise #10
+(defun nthcdr2 (n lst)
+ (if(null lst)
+     nil
+  (if (= n 0)
+    lst
+    (nthcdr2 (- n 1) (cdr lst)))))
+
+;Test Cases
+(print(nthcdr2 0 '()))
+(print(nthcdr2 0 '(12 4 65 3)))
+(print(nthcdr2 1 '(12 4 65 3)))
+(print(nthcdr2 2 '(12 4 65 3)))
+(print(nthcdr2 3 '(12 4 65 3)))
+(print(nthcdr2 4 '(12 4 65 3)))
+
+;Exercise #11
