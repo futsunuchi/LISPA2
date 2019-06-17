@@ -2,7 +2,7 @@
 ; Juan Sebastian Hoyos			40087920
 ; Noah Freger				40097005
 ; Abdalla Osman				40007620
-; Kevin Rao 
+; Kevin Rao 				40095427
 
 ;Assignment 2:
 ;Exercise #1
@@ -135,3 +135,19 @@
 (print(nthcdr2 4 '(12 4 65 3)))
 
 ;Exercise #11
+
+(defun nthcar2 (n lst)
+ (setq head (list(car lst)))
+ (if(or(zerop n)(null lst))
+     nil
+  (if (= n 1)
+     head
+    (append head (nthcar2 (- n 1) (cdr lst))))))
+
+;Test Cases
+(print(nthcar2 0 '()))
+(print(nthcar2 0 '(12 4 65 3)))
+(print(nthcar2 1 '(12 4 65 3)))
+(print(nthcar2 2 '(12 4 65 3)))
+(print(nthcar2 3 '(12 4 65 3)))
+(print(nthcar2 4 '(12 4 65 3)))
